@@ -247,6 +247,12 @@ return array(
         )
     ),
 
+    'controller_plugins' => array(
+        'factories' => array(
+            'objectParams' => 'DoctrineORMModule\Service\ObjectParamsFactory',
+        ),
+    ),
+
     ////////////////////////////////////////////////////////////////////
     // `zendframework/zend-developer-tools` specific settings         //
     // ignore these if you're not developing additional features for  //
