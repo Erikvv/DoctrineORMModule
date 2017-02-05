@@ -19,25 +19,25 @@
 
 namespace DoctrineORMModule\Service;
 
-use RuntimeException;
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
-use DoctrineModule\Controller\Plugin\ObjectParams;
+use DoctrineModule\Controller\Plugin\Params;
 
 /**
  * @license MIT
  * @link    http://www.doctrine-project.org/
  * @author  Erik van Velzen <erik@evanv.nl>
  */
-class ObjectParamsFactory implements FactoryInterface
+class ParameterPluginFactory implements FactoryInterface
 {
 	/**
      * {@inheritDoc}
      */
     public function createService(ServiceLocatorInterface $plugins)
     {
-    	return new ObjectParams(
-				$plugins->getServiceLocator()->get('Doctrine\ORM\EntityManager'), 
-				$plugins->get('params'));
+        return new Params(
+		    $plugins->getServiceLocator()->get('doctrine.entitymanager.orm_default'),
+		    $plugins->get('params')
+        );
     }
 }

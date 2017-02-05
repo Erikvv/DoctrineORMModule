@@ -249,7 +249,7 @@ return array(
 
     'controller_plugins' => array(
         'factories' => array(
-            'objectParams' => 'DoctrineORMModule\Service\ObjectParamsFactory',
+            'ormParams' => 'DoctrineORMModule\Service\ParamsPluginFactory',
         ),
     ),
 
